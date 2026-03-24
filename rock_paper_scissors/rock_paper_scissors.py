@@ -1,11 +1,15 @@
 import random
 
+ROCK = 'r'
+PAPER = 'p'
+SCISSORS = 's'
+
 emojis = {
-    'r': '⛰',
-    'p': '📃',
-    's': '✂'
+    ROCK: '⛰',
+    PAPER: '📃',
+    SCISSORS: '✂'
 }
-choices = ('r', 'p', 's')
+choices = (ROCK, PAPER, SCISSORS)
 
 while True:
     user_choice = input("Rock, paper or scissors (r/p/s): ").lower()
@@ -22,9 +26,9 @@ while True:
     if user_choice == computer_choice:
         print("It is a draw")
     elif (
-        (user_choice == 'r' and computer_choice == 's') or
-        (user_choice == 'p' and computer_choice == 'r') or
-        (user_choice == 's' and computer_choice == 'p')
+        (user_choice == ROCK and computer_choice == SCISSORS) or
+        (user_choice == PAPER and computer_choice == ROCK) or
+        (user_choice == SCISSORS and computer_choice == PAPER)
     ):
         print("You won!")
     else:
