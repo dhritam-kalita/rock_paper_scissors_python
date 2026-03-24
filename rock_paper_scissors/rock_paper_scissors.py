@@ -11,18 +11,21 @@ emojis = {
 }
 choices = (ROCK, PAPER, SCISSORS)
 
-while True:
-    user_choice = input("Rock, paper or scissors (r/p/s): ").lower()
+def get_input():
+    while True:
+        user_choice = input("Rock, paper or scissors (r/p/s): ").lower()
 
-    if user_choice not in choices:
-        print("Invalid choice!")
-        continue
-
-    computer_choice = random.choice(choices)
-
+        if user_choice not in choices:
+            print("Invalid choice!")
+            continue
+        else:
+            return user_choice
+        
+def display_choices(user_choice, computer_choice):
     print(f"Your choice: {emojis[user_choice]}")
     print(f"Computer choice: {emojis[computer_choice]}")
-    
+
+def find_winners(user_choice, computer_choice):
     if user_choice == computer_choice:
         print("It is a draw")
     elif (
@@ -33,4 +36,14 @@ while True:
         print("You won!")
     else:
         print("You lost!")
+
+def game():
+    while True:
+        user_choice = get_input()
+        computer_choice = random.choice(choices)
         
+        display_choices(user_choice, computer_choice)
+        
+        find_winners(user_choice, computer_choice)
+
+game()
