@@ -13,7 +13,7 @@ emojis = {
     SCISSORS: '✂'
 }
 # define valid user input
-choices = (ROCK, PAPER, SCISSORS)
+choices = tuple(emojis.keys())
 
 def get_input():
     '''
